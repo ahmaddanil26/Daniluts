@@ -19,7 +19,26 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::prefix('mahasiswa')->group(function () {
-    Route::get('/pendaftaran', [MahasiswaController::class, 'pendaftaran']);
-    Route::get('/ujian', [MahasiswaController::class, 'ujian']);
-    Route::get('/nilai', [MahasiswaController::class, 'nilai']);
+    
+    Route::get('pendaftaran', function () {
+        $title = 'Pendaftaran';
+        $text = 'Halaman Pendaftaran';
+
+        return view('mahasiswa.index', compact('title', 'text'));
+    });
+
+    Route::get('ujian', function () {
+        $title = 'ujian';
+        $text = 'Halaman Ujian';
+
+        return view('mahasiswa.index', compact('title', 'text'));
+    });
+    
+    Route::get('nilai', function () {
+        $title = 'Nilai';
+        $text = 'Halaman Nilai';
+
+        return view('mahasiswa.index', compact('title', 'text'));
+    });
+    
 });
